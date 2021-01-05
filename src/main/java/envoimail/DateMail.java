@@ -12,11 +12,21 @@ import java.time.LocalDate;
  * @author 96441
  */
 public class DateMail {
-      private LocalDate datedeadline;
+    
+    private LocalDate datedeadline;
     private String mailredevable;
     private String mailagent;
+    private String nom;
 
     public DateMail() {
+    }
+
+    public void setNom(String nom) {
+        this.nom = nom;
+    }
+
+    public String getNom() {
+        return nom;
     }
 
     public LocalDate getDatedeadline() {

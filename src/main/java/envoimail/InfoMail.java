@@ -22,8 +22,8 @@ public class InfoMail {
 
     public InfoMail() {
     }
-     final static String url="jdbc:postgresql://localhost/pappl";
-     final static String motDePass = "zhang99662";
+     final static String url="jdbc:postgresql://localhost/EcheancierM";
+     final static String motDePass = "lollol1234";
     
     public void enregistrerMail (Boolean estRedevable,String messageAvant, String jourAvant,String messageApres, String jourApres)  {
         

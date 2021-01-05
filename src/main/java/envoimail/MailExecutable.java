@@ -16,6 +16,7 @@ public class MailExecutable {
      */
     public static void main(String[] args) {
         try {
+            System.out.println("hola amigoos");
             GetInfo  info=new GetInfo();
             info.VerifierListe();// TODO code application logic here
         } catch (IOException ex) {
