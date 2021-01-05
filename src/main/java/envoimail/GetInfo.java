@@ -49,12 +49,12 @@ public class GetInfo{
            }
            if  (date.plusDays(Long.parseLong(jourMessageAgent.get(1))).isEqual(dm.getDatedeadline())){
                System.out.println("entro3");
-               sendmail.send(dm.getMailagent(), "Echéance à payer, Date deadline:"+dm.getDatedeadline(),jourMessageAgent.get(0) + "\n Le redevable est" + dm.getNom());
+               sendmail.send(dm.getMailagent(), "Echéance à payer, Date deadline:"+dm.getDatedeadline(),jourMessageAgent.get(0) + "\n Le redevable est " + dm.getNom());
                
            }
            if  (date.minusDays(Long.parseLong(jourMessageAgent.get(3))).isEqual(dm.getDatedeadline())){
                System.out.println("entro4");
-               sendmail.send(dm.getMailagent(), "Echéance non payée, Date deadline:"+dm.getDatedeadline(),jourMessageAgent.get(2) + "\n Le redevable est" + dm.getNom());
+               sendmail.send(dm.getMailagent(), "Echéance non payée, Date deadline:"+dm.getDatedeadline(),jourMessageAgent.get(2) + "\n Le redevable est " + dm.getNom());
                
            }
         } 
@@ -65,7 +65,7 @@ public class GetInfo{
       
       try {
         Class.forName("org.postgresql.Driver");
-        Connection conn = DriverManager.getConnection("jdbc:postgresql://localhost/pappl","postgres", "zhang99662");
+        Connection conn = DriverManager.getConnection(InfoMail.url,"postgres", InfoMail.motDePass);
         String requete1 =  "SELECT echeance.date_deadline, dette.adresse_mail_redevable,agent_comptable.adresse_mail_agent, redevable.nom_redevable "
                         +"FROM echeance JOIN dette ON (echeance.id_dette=dette.id_dette) JOIN agent_comptable ON (dette.id_agent=agent_comptable.id_agent)"
                         +" JOIN redevable ON (dette.adresse_mail_redevable=redevable.adresse_mail_redevable)WHERE echeance.statut_paiement=? AND echeance.statut_annulation=?";
