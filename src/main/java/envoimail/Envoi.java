@@ -27,8 +27,8 @@ public class Envoi  {
         properties.put("mail.smtp.auth", "true");
         properties.put("mail.smtp.starttls.enable", "true");
         properties.put("mail.smtp.port","587");
-        String myAccountEmail="chenkai.zhang-@eleves.ec-nantes.fr";
-        String password="Zck19971004";
+        String myAccountEmail="1232314";
+        String password="3213141";
         Session session;
         session = Session.getInstance(properties, new Authenticator(){
            protected PasswordAuthentication getPasswordAuthentication(){
